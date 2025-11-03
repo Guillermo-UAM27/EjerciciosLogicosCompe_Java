@@ -14,7 +14,7 @@ public class Main {
         Factorial factorial = new Factorial();
         Capicua capicua = new Capicua();
         SerieFibonacci fibonacci = new SerieFibonacci();
-
+        NumerosPrimos primo = new NumerosPrimos();
         int opcion;
 
         // Menú repetitivo hasta que el usuario decida salir
@@ -28,7 +28,8 @@ public class Main {
             System.out.println("6. Calcular factorial");
             System.out.println("7. Verificar palabra o número capicúa");
             System.out.println("8. Generar serie Fibonacci");
-            System.out.println("9. Salir");
+            System.out.println("9. Verificar si un número es primo");
+            System.out.println("10. Salir");
             System.out.print("Selecciona una opción: ");
 
             opcion = sc.nextInt();
@@ -84,6 +85,16 @@ public class Main {
                     break;
 
                 case 9:
+                    System.out.print("Introduce un número: ");
+                    int n4 = sc.nextInt();
+                    if (NumerosPrimos.esPrimo(n4)) {
+                        System.out.println(n4 + " es un número primo.");
+                    } else {
+                        System.out.println(n4 + " no es un número primo.");
+                    }
+                    break;
+
+                case 10:
                     System.out.println("Saliendo... 👋");
                     break;
 
@@ -91,7 +102,7 @@ public class Main {
                     System.out.println("Opción no válida.");
             }
 
-        } while (opcion != 9);
+        } while (opcion != 10);
 
         sc.close();
     }
